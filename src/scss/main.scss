@@ -1,0 +1,93 @@
+$primary-color: #5757fc;
+$secondary-color: #666;
+$heavy-border: solid 3px #000;
+$light-border: solid 1px #999;
+
+@mixin big-squares-borders($position) {
+  @if ($position == bottom) {
+    &:nth-child(1) {
+      border-top: $heavy-border;
+    }
+  } @else if ($position == right) {
+    &:nth-child(1) {
+      border-left: $heavy-border;
+    }
+  }
+
+  &:nth-child(3n) {
+    border-#{$position}: $heavy-border;
+  }
+}
+
+@mixin button-color($color) {
+  background-color: $color;
+
+  &:hover {
+    background-color: lighten($color, 2);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form {
+  text-align: center;
+
+  table {
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 10vh;
+
+    tbody {
+      tr {
+        @include big-squares-borders(bottom);
+
+        td {
+          margin: 0;
+          padding: 0;
+          border: $light-border;
+
+          @include big-squares-borders(right);
+
+          input {
+            padding: 0;
+            font-size: 1.4em;
+            width: 2rem;
+            height: 2rem;
+            text-align: center;
+            border: none;
+
+            &.bold {
+              font-weight: bold;
+              color: $primary-color;
+            }
+          }
+
+          input[type="number"]::-webkit-inner-spin-button,
+          input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  button {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 5px;
+    color: #eee;
+
+    &.btn-submit {
+      @include button-color($primary-color);
+    }
+
+    &.btn-reset {
+      @include button-color($secondary-color);
+    }
+  }
+}

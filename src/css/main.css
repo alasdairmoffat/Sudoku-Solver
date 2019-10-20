@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box; }
+
+form {
+  text-align: center; }
+  form table {
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 10vh; }
+    form table tbody tr:nth-child(1) {
+      border-top: solid 3px #000; }
+    form table tbody tr:nth-child(3n) {
+      border-bottom: solid 3px #000; }
+    form table tbody tr td {
+      margin: 0;
+      padding: 0;
+      border: solid 1px #999; }
+      form table tbody tr td:nth-child(1) {
+        border-left: solid 3px #000; }
+      form table tbody tr td:nth-child(3n) {
+        border-right: solid 3px #000; }
+      form table tbody tr td input {
+        padding: 0;
+        font-size: 1.4em;
+        width: 2rem;
+        height: 2rem;
+        text-align: center;
+        border: none; }
+        form table tbody tr td input.bold {
+          font-weight: bold;
+          color: #5757fc; }
+      form table tbody tr td input[type="number"]::-webkit-inner-spin-button,
+      form table tbody tr td input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0; }
+  form button {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 5px;
+    color: #eee; }
+    form button.btn-submit {
+      background-color: #5757fc; }
+      form button.btn-submit:hover {
+        background-color: #6161fc; }
+    form button.btn-reset {
+      background-color: #666; }
+      form button.btn-reset:hover {
+        background-color: #6b6b6b; }
