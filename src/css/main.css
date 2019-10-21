@@ -48,3 +48,29 @@ form {
       background-color: #666; }
       form button.btn-reset:hover {
         background-color: #6b6b6b; }
+
+.error-message {
+  background-color: #ff7676;
+  color: #eee;
+  margin: 10px calc(50vw - 8rem);
+  padding: 7px;
+  border: solid 3px #a90000;
+  border-radius: 10px;
+  position: relative; }
+  .error-message button {
+    background-color: transparent;
+    padding: 0;
+    position: absolute;
+    top: calc(-1rem + 5px);
+    right: 10px; }
+    .error-message button .cross:hover {
+      cursor: pointer; }
+    .error-message button .cross div {
+      width: 20px;
+      height: 2px;
+      background-color: #a90000;
+      margin: 0 0 9px 0; }
+      .error-message button .cross div:first-child {
+        transform: rotate(45deg) translate(8px, 8px); }
+      .error-message button .cross div:last-child {
+        transform: rotate(-45deg); }

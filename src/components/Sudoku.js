@@ -6,6 +6,16 @@ const Sudoku = () => {
 
   const [grid, setGrid] = useState(initialGrid);
   const [solution, setSolution] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const dismissError = () => {
+    setErrorMessage('');
+  };
+
+  const showError = (message) => {
+    setErrorMessage(message);
+    setTimeout(dismissError, 5000);
+  };
 
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -24,7 +34,11 @@ const Sudoku = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     const solvedGrid = sudoku.solve(grid);
-    setSolution(solvedGrid);
+    if (solvedGrid) {
+      setSolution(solvedGrid);
+    } else {
+      showError('No possible solution');
+    }
   };
 
   const onReset = (e) => {
@@ -47,6 +61,7 @@ const Sudoku = () => {
           name={cell}
           value={grid[cell]}
           onChange={onChange}
+          autoComplete="off"
         />
       )}
     </td>
@@ -66,6 +81,7 @@ const Sudoku = () => {
       <table>
         <tbody>{rows}</tbody>
       </table>
+
       {solution ? (
         <button type="button" className="btn-reset" onClick={onReset}>
           Reset
@@ -75,6 +91,18 @@ const Sudoku = () => {
           Solve
         </button>
       )}
+
+      {errorMessage ? (
+        <div className="error-message">
+          {errorMessage}
+          <button type="button" onClick={dismissError}>
+            <div className="cross">
+              <div />
+              <div />
+            </div>
+          </button>
+        </div>
+      ) : null}
     </form>
   );
 };

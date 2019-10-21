@@ -1,5 +1,6 @@
 $primary-color: #5757fc;
 $secondary-color: #666;
+$warning-color: #a90000;
 $heavy-border: solid 3px #000;
 $light-border: solid 1px #999;
 
@@ -88,6 +89,45 @@ form {
 
     &.btn-reset {
       @include button-color($secondary-color);
+    }
+  }
+}
+
+.error-message {
+  background-color: lighten($warning-color, 40);
+  color: #eee;
+  margin: 10px calc(50vw - 8rem);
+  padding: 7px;
+  border: solid 3px $warning-color;
+  border-radius: 10px;
+  position: relative;
+
+  button {
+    background-color: transparent;
+    padding: 0;
+    position: absolute;
+    top: calc(-1rem + 5px);
+    right: 10px;
+
+    .cross {
+      &:hover {
+        cursor: pointer;
+      }
+
+      div {
+        width: 20px;
+        height: 2px;
+        background-color: $warning-color;
+        margin: 0 0 9px 0;
+
+        &:first-child {
+          transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        &:last-child {
+          transform: rotate(-45deg);
+        }
+      }
     }
   }
 }
