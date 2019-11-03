@@ -1,0 +1,44 @@
+$primary-color: #5757fc;
+$secondary-color: #666;
+$warning-color: #a90000;
+$heavy-border: solid 3px #000;
+$light-border: solid 1px #999;
+
+* {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+@mixin button-color($color) {
+  background-color: $color;
+
+  &:hover {
+    background-color: lighten($color, 2);
+  }
+}
+
+button {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 5px;
+  color: #eee;
+  outline: inherit;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.btn-submit {
+    @include button-color($primary-color);
+  }
+
+  &.btn-reset {
+    @include button-color($secondary-color);
+  }
+
+  &.btn-cancel {
+    @include button-color($warning-color);
+  }
+}

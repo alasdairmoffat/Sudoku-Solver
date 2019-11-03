@@ -1,53 +1,90 @@
 * {
-  box-sizing: border-box; }
-
-form {
+  box-sizing: border-box;
   text-align: center; }
-  form table {
-    border-collapse: collapse;
-    margin: auto;
-    margin-top: 10vh; }
-    form table tbody tr:nth-child(1) {
-      border-top: solid 3px #000; }
-    form table tbody tr:nth-child(3n) {
-      border-bottom: solid 3px #000; }
-    form table tbody tr td {
-      margin: 0;
-      padding: 0;
-      border: solid 1px #999; }
-      form table tbody tr td:nth-child(1) {
-        border-left: solid 3px #000; }
-      form table tbody tr td:nth-child(3n) {
-        border-right: solid 3px #000; }
-      form table tbody tr td input {
-        padding: 0;
-        font-size: 1.4em;
-        width: 2rem;
-        height: 2rem;
-        text-align: center;
-        border: none; }
-        form table tbody tr td input.bold {
-          font-weight: bold;
-          color: #5757fc; }
-      form table tbody tr td input[type="number"]::-webkit-inner-spin-button,
-      form table tbody tr td input[type="number"]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0; }
-  form button {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    padding: 0.5rem 2rem;
-    border: none;
-    border-radius: 5px;
-    color: #eee; }
-    form button.btn-submit {
-      background-color: #5757fc; }
-      form button.btn-submit:hover {
-        background-color: #6161fc; }
-    form button.btn-reset {
-      background-color: #666; }
-      form button.btn-reset:hover {
-        background-color: #6b6b6b; }
+
+button {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 5px;
+  color: #eee;
+  outline: inherit; }
+  button:hover {
+    cursor: pointer; }
+  button.btn-submit {
+    background-color: #5757fc; }
+    button.btn-submit:hover {
+      background-color: #6161fc; }
+  button.btn-reset {
+    background-color: #666; }
+    button.btn-reset:hover {
+      background-color: #6b6b6b; }
+  button.btn-cancel {
+    background-color: #a90000; }
+    button.btn-cancel:hover {
+      background-color: #b30000; }
+
+.overlay {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 90vh;
+  width: 100vw; }
+  .overlay .lds-grid {
+    position: relative;
+    width: calc(30px * 4 + 30px * 6);
+    height: calc(30px * 4 + 30px * 6);
+    left: calc(50% - calc(30px * 4 + 30px * 6) / 2); }
+    .overlay .lds-grid div {
+      position: absolute;
+      width: calc(30px * 2);
+      height: calc(30px * 2);
+      border-radius: 50%;
+      background: #000;
+      animation: lds-grid 1.2s linear infinite; }
+      .overlay .lds-grid div:nth-child(1) {
+        top: 30px;
+        left: 30px;
+        animation-delay: 0s; }
+      .overlay .lds-grid div:nth-child(2) {
+        top: 30px;
+        left: 120px;
+        animation-delay: -0.4s; }
+      .overlay .lds-grid div:nth-child(3) {
+        top: 30px;
+        left: 210px;
+        animation-delay: -0.8s; }
+      .overlay .lds-grid div:nth-child(4) {
+        top: 120px;
+        left: 30px;
+        animation-delay: -0.4s; }
+      .overlay .lds-grid div:nth-child(5) {
+        top: 120px;
+        left: 120px;
+        animation-delay: -0.8s; }
+      .overlay .lds-grid div:nth-child(6) {
+        top: 120px;
+        left: 210px;
+        animation-delay: -1.2s; }
+      .overlay .lds-grid div:nth-child(7) {
+        top: 210px;
+        left: 30px;
+        animation-delay: -0.8s; }
+      .overlay .lds-grid div:nth-child(8) {
+        top: 210px;
+        left: 120px;
+        animation-delay: -1.2s; }
+      .overlay .lds-grid div:nth-child(9) {
+        top: 210px;
+        left: 210px;
+        animation-delay: -1.6s; }
+
+@keyframes lds-grid {
+  0%,
+  100% {
+    opacity: 1; }
+  50% {
+    opacity: 0.5; } }
 
 .error-message {
   background-color: #ff7676;
@@ -57,20 +94,51 @@ form {
   border: solid 3px #a90000;
   border-radius: 10px;
   position: relative; }
-  .error-message button {
+  .error-message .btn-close {
     background-color: transparent;
     padding: 0;
     position: absolute;
     top: calc(-1rem + 5px);
     right: 10px; }
-    .error-message button .cross:hover {
+    .error-message .btn-close .cross:hover {
       cursor: pointer; }
-    .error-message button .cross div {
+    .error-message .btn-close .cross div {
       width: 20px;
       height: 2px;
       background-color: #a90000;
       margin: 0 0 9px 0; }
-      .error-message button .cross div:first-child {
+      .error-message .btn-close .cross div:first-child {
         transform: rotate(45deg) translate(8px, 8px); }
-      .error-message button .cross div:last-child {
+      .error-message .btn-close .cross div:last-child {
         transform: rotate(-45deg); }
+
+form table {
+  border-collapse: collapse;
+  margin: auto;
+  margin-top: 10vh; }
+  form table tbody tr:nth-child(1) {
+    border-top: solid 3px #000; }
+  form table tbody tr:nth-child(3n) {
+    border-bottom: solid 3px #000; }
+  form table tbody tr td {
+    margin: 0;
+    padding: 0;
+    border: solid 1px #999; }
+    form table tbody tr td:nth-child(1) {
+      border-left: solid 3px #000; }
+    form table tbody tr td:nth-child(3n) {
+      border-right: solid 3px #000; }
+    form table tbody tr td input {
+      padding: 0;
+      font-size: 1.4em;
+      width: 2rem;
+      height: 2rem;
+      text-align: center;
+      border: none; }
+      form table tbody tr td input.bold {
+        font-weight: bold;
+        color: #5757fc; }
+    form table tbody tr td input[type="number"]::-webkit-inner-spin-button,
+    form table tbody tr td input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
