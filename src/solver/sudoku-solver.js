@@ -1,4 +1,4 @@
-function sudoku() {
+function sudoku(puzzle) {
   function cross(A, B) {
     /*
 A = 'abc'
@@ -168,9 +168,7 @@ cross(A, B) = [
 
     return (
       values[smallestCell]
-        .map((value) =>
-          // eslint-disable-next-line prefer-object-spread
-          search(assign(Object.assign({}, values), smallestCell, value)))
+        .map((value) => search(assign({ ...values }, smallestCell, value)))
         .find((e) => !!e) || false
     );
   }
@@ -178,6 +176,6 @@ cross(A, B) = [
   function solve(grid) {
     return search(parseGrid(grid));
   }
-}
 
-export default sudoku;
+  return solve(puzzle);
+}

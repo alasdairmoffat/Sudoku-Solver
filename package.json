@@ -14,6 +14,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "transpile-solver": "babel src/solver/sudoku-solver.js -d src/solver/shortened",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -30,6 +31,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "7.6.0",
+    "@babel/preset-env": "^7.7.1",
+    "babel-preset-minify": "^0.5.1",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
