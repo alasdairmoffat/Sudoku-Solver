@@ -1,21 +1,22 @@
 {
   "files": {
     "main.css": "/Sudoku-Solver/static/css/main.20553b0d.chunk.css",
-    "main.js": "/Sudoku-Solver/static/js/main.fceb2aca.chunk.js",
-    "main.js.map": "/Sudoku-Solver/static/js/main.fceb2aca.chunk.js.map",
-    "runtime-main.js": "/Sudoku-Solver/static/js/runtime-main.dd1dfacb.js",
-    "runtime-main.js.map": "/Sudoku-Solver/static/js/runtime-main.dd1dfacb.js.map",
-    "static/js/2.61aec3c6.chunk.js": "/Sudoku-Solver/static/js/2.61aec3c6.chunk.js",
-    "static/js/2.61aec3c6.chunk.js.map": "/Sudoku-Solver/static/js/2.61aec3c6.chunk.js.map",
+    "main.js": "/Sudoku-Solver/static/js/main.c3799a65.chunk.js",
+    "main.js.map": "/Sudoku-Solver/static/js/main.c3799a65.chunk.js.map",
+    "runtime-main.js": "/Sudoku-Solver/static/js/runtime-main.5f7ac2e6.js",
+    "runtime-main.js.map": "/Sudoku-Solver/static/js/runtime-main.5f7ac2e6.js.map",
+    "static/js/2.adaaa23f.chunk.js": "/Sudoku-Solver/static/js/2.adaaa23f.chunk.js",
+    "static/js/2.adaaa23f.chunk.js.map": "/Sudoku-Solver/static/js/2.adaaa23f.chunk.js.map",
     "index.html": "/Sudoku-Solver/index.html",
-    "precache-manifest.4d04a29820d631de2a7f5d2945886456.js": "/Sudoku-Solver/precache-manifest.4d04a29820d631de2a7f5d2945886456.js",
+    "precache-manifest.32621c408ccab9e0c213089f476124ed.js": "/Sudoku-Solver/precache-manifest.32621c408ccab9e0c213089f476124ed.js",
     "service-worker.js": "/Sudoku-Solver/service-worker.js",
-    "static/css/main.20553b0d.chunk.css.map": "/Sudoku-Solver/static/css/main.20553b0d.chunk.css.map"
+    "static/css/main.20553b0d.chunk.css.map": "/Sudoku-Solver/static/css/main.20553b0d.chunk.css.map",
+    "static/js/2.adaaa23f.chunk.js.LICENSE": "/Sudoku-Solver/static/js/2.adaaa23f.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.dd1dfacb.js",
-    "static/js/2.61aec3c6.chunk.js",
+    "static/js/runtime-main.5f7ac2e6.js",
+    "static/js/2.adaaa23f.chunk.js",
     "static/css/main.20553b0d.chunk.css",
-    "static/js/main.fceb2aca.chunk.js"
+    "static/js/main.c3799a65.chunk.js"
   ]
 }
